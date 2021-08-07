@@ -20,11 +20,11 @@ A command line tool for [ControlPanel dashboard](https://github.com/ControlPanel
 # Profile Management
 cpcli profiles list
 cpcli profiles list PROFILE
-cpcli profiles create
+cpcli profiles create PROFILE
 cpcli profiles remove PROFILE
 cpcli profiles use PROFILE
 
-# User Management (default output file if output >= 50 lines : users.json)
+# User Management (default output file users.json)
 cpcli users fetch --output=FILE.json
 
 # Server Management (default output file if output >= 50 lines : servers.json)
