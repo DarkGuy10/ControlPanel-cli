@@ -21,7 +21,12 @@ if(!argv._.length){
 }
 const moduleName = argv._.shift().toLowerCase()
 const mod = modules.get(moduleName)
-if(!mod) return
+if(!mod){
+    io.error(`Error: No module named "${moduleName}" found`)
+    io.print(`[ > ] Available modules:`)
+    io.tree(Array.from(modules.keys()))
+    return
+}
 
 if(!argv._.length){
     io.print(`[ > ] Available commands for module: ${moduleName}`)
@@ -29,7 +34,12 @@ if(!argv._.length){
     return
 }
 const commandName = argv._.shift().toLowerCase()
-if(!mod.hasOwnProperty(commandName)) return
+if(!mod.hasOwnProperty(commandName)) {
+    io.error(`Error: Module "${moduleName}" has no command "${commandName}"`)
+    io.print(`[ > ] Available commands for module: ${moduleName}`)
+    io.tree(Object.keys(mod))
+    return
+}
 const command = mod[commandName]
 
 command(argv)
