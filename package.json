@@ -1,5 +1,5 @@
 {
-  "name": "cpcli",
+  "name": "@darkguy10/cpcli",
   "version": "0.1.0",
   "description": "A cli tool for controlpanel dashboard.",
   "main": "index.js",
