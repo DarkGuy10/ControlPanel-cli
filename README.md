@@ -24,17 +24,16 @@ cpcli profiles create PROFILE
 cpcli profiles remove PROFILE
 cpcli profiles use PROFILE
 
-# User Management (default output file users.json)
-cpcli users fetch --output=FILE.json
+# User Management (default output file: users.json)
+cpcli users fetch [--output=FILE.json]
 
-# Server Management (default output file if output >= 50 lines : servers.json)
+# Server Management (default output file: servers.json)
 # NOTE : FLAG CHAINING IS NOT SUPPORTED IN SERVER MANAGEMENT YET
 # Using "--egg=EGG --suspended" will delete all servers of that egg irrespective of suspended or not
 cpcli servers fetch [--egg=EGG] [--nest=NEST] [--suspended] [--output=FILE.json]
 cpcli servers delete [--egg=EGG] [--nest=NEST] [--suspended] [--all]
 
-# Voucher Management (default output file if output >= 50 lines : vouchers.json)
-cpcli vouchers fetch --output=FILE.json
-cpcli vouchers fetch --valid --output=FILE.json
-cpcli vouchers create --memo=MEMO --code=CODE --credits=CREDITS --uses=USES --expires-at=EXPIRES-AT(dd-mm-yyyy)
+# Voucher Management (default output file: vouchers.json)
+cpcli vouchers fetch [--valid] [--invalid] [--output=FILE.json]
+cpcli vouchers delete [--valid] [--invalid] [--all]
 ```
