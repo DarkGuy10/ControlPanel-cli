@@ -1,5 +1,5 @@
 {
-  "name": "controlpanel",
+  "name": "controlpanel-cli",
   "version": "0.1.0",
   "description": "A cli tool for controlpanel dashboard.",
   "main": "index.js",
@@ -28,5 +28,8 @@
     "controlpanelapi.js": "^1.1.2",
     "inquirer": "^8.1.2",
     "minimist": "^1.2.5"
-  }
+  },
+  "bin": {
+    "dashboard": "./index.js"
+  }  
 }
