@@ -3,11 +3,12 @@
 // Import required modules
 const chalk = require('chalk')
 const fs = require('fs')
+const path = require('path')
 const io = require('./lib/io')
 io.banner()
 
 const modules = new Map()
-for(const each of fs.readdirSync('./lib/modules/')){
+for(const each of fs.readdirSync(path.join(__dirname, '/lib/modules'))){
     const mod = require(`./lib/modules/${each}`)
     modules.set(each.replace('.js', ''), mod)
 }
